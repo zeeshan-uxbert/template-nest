@@ -27,6 +27,7 @@ import { I18nCustomModule } from './common/i18n/i18n.module';
       isGlobal: true,
       load: [configuration],
       envFilePath: ['.env', '.env.local'],
+      cache: true,
     }),
 
     // Rate limiting

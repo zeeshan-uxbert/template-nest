@@ -3,10 +3,12 @@ import { ValidationPipe, VersioningType } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import helmet from 'helmet';
+import * as compression from 'compression';
 import { AppModule } from './app.module';
 import { WinstonLogger } from './common/logger/winston.logger';
 import { HttpExceptionFilter } from './common/filters/http-exception.filter';
 import { ResponseInterceptor } from './common/interceptors/response.interceptor';
+import { TimeoutInterceptor } from './common/interceptors/timeout.interceptor';
 import { RequestIdMiddleware } from './common/middleware/request-id.middleware';
 
 async function bootstrap() {
@@ -38,6 +40,9 @@ async function bootstrap() {
   // Security
   app.use(helmet());
 
+  // Compression
+  app.use(compression());
+
   // CORS
   app.enableCors({
     origin: nodeEnv === 'production' ? false : '*',
@@ -61,6 +66,7 @@ async function bootstrap() {
 
   // Global interceptors
   app.useGlobalInterceptors(new ResponseInterceptor());
+  app.useGlobalInterceptors(new TimeoutInterceptor(30000)); // 30 seconds timeout
 
   // Swagger documentation
   if (swaggerEnabled) {
