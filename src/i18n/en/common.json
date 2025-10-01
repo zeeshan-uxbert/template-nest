@@ -1,0 +1,21 @@
+{
+  "welcome": "Welcome to NestJS Template",
+  "hello": "Hello {name}!",
+  "errors": {
+    "notFound": "Resource not found",
+    "unauthorized": "Unauthorized access",
+    "badRequest": "Bad request",
+    "internalServer": "Internal server error"
+  },
+  "auth": {
+    "loginSuccess": "Login successful",
+    "loginFailed": "Invalid credentials",
+    "registerSuccess": "Registration successful",
+    "registerFailed": "Registration failed",
+    "tokenExpired": "Token has expired",
+    "tokenInvalid": "Invalid token"
+  }
+}
+
+
+

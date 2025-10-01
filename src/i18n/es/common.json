@@ -1,0 +1,21 @@
+{
+  "welcome": "Bienvenido a la plantilla NestJS",
+  "hello": "¡Hola {name}!",
+  "errors": {
+    "notFound": "Recurso no encontrado",
+    "unauthorized": "Acceso no autorizado",
+    "badRequest": "Solicitud incorrecta",
+    "internalServer": "Error interno del servidor"
+  },
+  "auth": {
+    "loginSuccess": "Inicio de sesión exitoso",
+    "loginFailed": "Credenciales inválidas",
+    "registerSuccess": "Registro exitoso",
+    "registerFailed": "Error en el registro",
+    "tokenExpired": "El token ha expirado",
+    "tokenInvalid": "Token inválido"
+  }
+}
+
+
+
